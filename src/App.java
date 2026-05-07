@@ -29,7 +29,7 @@ public class App {
                         System.out.println("\033[1mThe Grand Stand\033[0m");
 
                         //Room description:
-                        if(!room_visited[0]){
+                        if(!room_visited[room_num]){
                             room_descriptions.The_Grand_Stand("first");
                         }
 
@@ -44,7 +44,7 @@ public class App {
                         System.out.println("\033[1mThe Gates of Destiny\033[0m");
 
                         //Room description:
-                        if(!room_visited[1]){
+                        if(!room_visited[room_num]){
                             room_descriptions.The_Gates_of_Destiny("first");
                         } else{
                             room_descriptions.The_Gates_of_Destiny("subsequent");
@@ -56,7 +56,25 @@ public class App {
                         current_room = room_num;
 
                         break;
+                    case 2:
+                        //Room title:
+                        System.out.println("\033[1mMaze Enterance\033[0m");
+
+                        //Room description:
+                        if(!room_visited[room_num]){
+                            room_descriptions.Maze_Enterance("first");
+                        } else{
+                            room_descriptions.Maze_Enterance("subsequent");
+                        }
+
+                        //Attached Rooms:
+                        player_input.direction_set(-1, -1, 3, 4, -1, -1, -1, -1, -1, -1);
+
+                        current_room = room_num;
+
+                        break;
                 }
+                System.out.println();
             }
 
             //Room number input into player input
@@ -65,6 +83,7 @@ public class App {
             //Continuous events:
             if(room_num == 0 && room_visited[0]){
                 room_descriptions.The_Grand_Stand("subsequent");
+                System.out.println();
             }
 
             //Set rooms visited:
@@ -73,10 +92,9 @@ public class App {
             }
 
             //Player input:
-            System.out.println();
             System.out.println("What would you like to do?:");
             System.out.print("> ");
-            String userInput = inputScanner.nextLine();
+            String userInput = inputScanner.nextLine().toLowerCase();
             System.out.println();
 
             //Player actions:
@@ -98,7 +116,9 @@ public class App {
             } else if (userInput.equalsIgnoreCase("echo on")) {
                 //echo on
                 player_input.echo(inputScanner);
-            } else if (userInput.equalsIgnoreCase("go north") || userInput.equalsIgnoreCase("north")){
+            } 
+            //Directions:
+            else if (userInput.equalsIgnoreCase("go north") || userInput.equalsIgnoreCase("north")){
                 room_num = player_input.north();
             } else if (userInput.equalsIgnoreCase("go south") || userInput.equalsIgnoreCase("south")){
                 room_num = player_input.south();
@@ -119,6 +139,20 @@ public class App {
             } else if (userInput.equalsIgnoreCase("go down") || userInput.equalsIgnoreCase("down")){
                 room_num = player_input.down();
             } 
+            //Inspect:
+            else if (userInput.equalsIgnoreCase("inspect")){
+                player_input.inspect("inspect_general");
+            } else if (userInput.startsWith("inspect ") && userInput.contains("announcer")){
+                player_input.inspect("inspect_announcer");
+            } else if (userInput.startsWith("inspect ") && userInput.contains("grand stand")){
+                player_input.inspect("inspect_grand_stand");
+            } else if (userInput.startsWith("inspect ") && userInput.contains("gate")){
+                player_input.inspect("inspect_gate");
+            } 
+            //Invalid Inputs:
+            else {
+                System.out.println("\033[3mI didn't understand that.\033[0m");
+            }
 
             System.out.println();
 

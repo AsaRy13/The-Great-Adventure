@@ -2,6 +2,7 @@ import java.util.Scanner;
 public class PlayerInput {
     //vars
     private boolean quit = false;
+    private RoomDescriptions room_descriptions = new RoomDescriptions();
     private int roomNum;
     private int northRoom = -1;
     private int southRoom = -1;
@@ -182,7 +183,13 @@ public class PlayerInput {
         }
     }
 
-    public void inspect(){
-        //Logic for inspect command will go here.
+    public void inspect(String inspect_object){
+        if (roomNum == 0){
+            this.room_descriptions.The_Grand_Stand(inspect_object);
+        } else if (roomNum == 1){
+            this.room_descriptions.The_Gates_of_Destiny(inspect_object);
+        } else if (roomNum == 2){
+            this.room_descriptions.Maze_Enterance(inspect_object);
+        }
     }
 }
