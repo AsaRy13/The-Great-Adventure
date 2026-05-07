@@ -75,6 +75,19 @@ public class PlayerInput {
         while(!leaveEcho);
     }
 
+    public void direction_set(int north_room, int south_room, int east_room, int west_room, int northwest_room, int southwest_room, int northeast_room, int southeast_room, int up_room, int down_room){
+        this.northRoom = north_room;
+        this.southRoom = south_room;
+        this.eastRoom = east_room;
+        this.westRoom = west_room;
+        this.northWestRoom = northwest_room;
+        this.southWestRoom = southwest_room;
+        this.northEastRoom = northeast_room;
+        this.southEastRoom = southeast_room;
+        this.upRoom = up_room;
+        this.downRoom = down_room;
+    }
+
     public int north(){
         if(this.northRoom == -1){
             System.out.println("I can't go that way.");
@@ -83,9 +96,86 @@ public class PlayerInput {
             return this.northRoom;
         }
     }
-    public int north(int set){
-        this.northRoom = set;
-        return this.northRoom;
+
+    public int south(){
+        if(this.southRoom == -1){
+            System.out.println("I can't go that way.");
+            return this.roomNum;
+        } else {
+            return this.southRoom;
+        }
+    }
+
+    public int east(){
+        if(this.eastRoom == -1){
+            System.out.println("I can't go that way.");
+            return this.roomNum;
+        } else {
+            return this.eastRoom;
+        }
+    }
+
+    public int west(){
+        if(this.westRoom == -1){
+            System.out.println("I can't go that way.");
+            return this.roomNum;
+        } else {
+            return this.westRoom;
+        }
+    }
+
+    public int northwest(){
+        if(this.northWestRoom == -1){
+            System.out.println("I can't go that way.");
+            return this.roomNum;
+        } else {
+            return this.northWestRoom;
+        }
+    }
+
+    public int southeast(){
+        if(this.southEastRoom == -1){
+            System.out.println("I can't go that way.");
+            return this.roomNum;
+        } else {
+            return this.southEastRoom;
+        }
+    }
+
+    public int northeast(){
+        if(this.northEastRoom == -1){
+            System.out.println("I can't go that way.");
+            return this.roomNum;
+        } else {
+            return this.northEastRoom;
+        }
+    }
+
+    public int southwest(){
+        if(this.southWestRoom == -1){
+            System.out.println("I can't go that way.");
+            return this.roomNum;
+        } else {
+            return this.southWestRoom;
+        }
+    }
+
+    public int up(){
+        if(this.upRoom == -1){
+            System.out.println("I can't go that way.");
+            return this.roomNum;
+        } else {
+            return this.upRoom;
+        }
+    }
+
+    public int down(){
+        if(this.downRoom == -1){
+            System.out.println("I can't go that way.");
+            return this.roomNum;
+        } else {
+            return this.downRoom;
+        }
     }
 
     public void inspect(){

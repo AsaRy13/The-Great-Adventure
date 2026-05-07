@@ -33,7 +33,29 @@ public class App {
                             room_descriptions.The_Grand_Stand("first");
                         }
 
-                        current_room = 0;
+                        //Attached Rooms:
+                        player_input.direction_set(1, -1, -1, -1, -1, -1, -1, -1, -1, -1);
+
+                        current_room = room_num;
+
+                        break;
+                    case 1:
+                        //Room title:
+                        System.out.println("\033[1mThe Gates of Destiny\033[0m");
+
+                        //Room description:
+                        if(!room_visited[1]){
+                            room_descriptions.The_Gates_of_Destiny("first");
+                        } else{
+                            room_descriptions.The_Gates_of_Destiny("subsequent");
+                        }
+
+                        //Attached Rooms:
+                        player_input.direction_set(2, 0, -1, -1, -1, -1, -1, -1, -1, -1);
+
+                        current_room = room_num;
+
+                        break;
                 }
             }
 
@@ -73,7 +95,27 @@ public class App {
             } else if (userInput.equalsIgnoreCase("echo on")) {
                 //echo on
                 player_input.echo(inputScanner);
-            }
+            } else if (userInput.equalsIgnoreCase("go north") || userInput.equalsIgnoreCase("north")){
+                room_num = player_input.north();
+            } else if (userInput.equalsIgnoreCase("go south") || userInput.equalsIgnoreCase("south")){
+                room_num = player_input.south();
+            } else if (userInput.equalsIgnoreCase("go west") || userInput.equalsIgnoreCase("west")){
+                room_num = player_input.west();
+            } else if (userInput.equalsIgnoreCase("go east") || userInput.equalsIgnoreCase("east")){
+                room_num = player_input.east();
+            } else if (userInput.equalsIgnoreCase("go northeast") || userInput.equalsIgnoreCase("northeast")){
+                room_num = player_input.northeast();
+            } else if (userInput.equalsIgnoreCase("go southwest") || userInput.equalsIgnoreCase("southwest")){
+                room_num = player_input.southwest();
+            } else if (userInput.equalsIgnoreCase("go northwest") || userInput.equalsIgnoreCase("northwest")){
+                room_num = player_input.northwest();
+            } else if (userInput.equalsIgnoreCase("go southeast") || userInput.equalsIgnoreCase("southeast")){
+                room_num = player_input.southeast();
+            } else if (userInput.equalsIgnoreCase("go up") || userInput.equalsIgnoreCase("up")){
+                room_num = player_input.up();
+            } else if (userInput.equalsIgnoreCase("go down") || userInput.equalsIgnoreCase("down")){
+                room_num = player_input.down();
+            } 
 
             System.out.println();
 
