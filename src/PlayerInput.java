@@ -22,6 +22,10 @@ public class PlayerInput {
         System.out.println("Testing");
     }
 
+    public void help(){
+        System.out.println("List of commands:\nhelp: Shows this list.\ntest: Says Testing.\nquit: Quits the game.\necho <on/off>: Echos input.\ninspect [object]: Does a general inspect or inspects specified object.\nDirectional Inputs: north, south, east, west, northwest, southwest, northeast, southeast, up, down");
+    }
+
     public boolean quit(){
         return this.quit;
     }

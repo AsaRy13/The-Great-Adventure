@@ -31,7 +31,7 @@ public class RoomDescriptions {
             System.out.println("\033[3mThe gates are standing wide open waiting for you to enter.\033[0m");
         } else if(descriptionType.equalsIgnoreCase("inspect_general")){
             //When the inspect command is used
-            System.out.println("\033[3mYou see the Gates of Destiny ahead (to the north) of you, standing wide open, waiting for you to enter\033[0m");
+            System.out.println("\033[3mYou see the Gates of Destiny ahead (to the north) of you, standing wide open, waiting for you to enter. On the otherside of them appears to be a maze.\033[0m");
         } else if(descriptionType.equalsIgnoreCase("inspect_gate")){
             System.out.println("\033[3mThe Gates of Destiny are beautifully crafted golden ornate gates that are waiting for you to enter them.\033[0m");
         }

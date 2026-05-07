@@ -80,7 +80,10 @@ public class App {
             System.out.println();
 
             //Player actions:
-            if (userInput.equalsIgnoreCase("test")) {
+            if(userInput.equalsIgnoreCase("help")){
+                //help
+                player_input.help();
+            } else if (userInput.equalsIgnoreCase("test")) {
                 //test
                 player_input.test();
             } else if (userInput.equalsIgnoreCase("quit")) {
