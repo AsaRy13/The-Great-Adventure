@@ -4,9 +4,9 @@ This is a simple text adventure game made with Java. I made this text adventure 
 
 This text adventure is called The Great Adventure. In this story we follow the main character who wakes up in a brand new world and is apparently the winner of an opportunity to go on a great adventure. Everyone who has gone on such an adventure starts off by going through the Gates of Destiny and then the adventure is unique to them, and for our main character, his adventure starts off with a maze.
 
-{Provide a link to your YouTube demonstration. It should be a 4-5 minute demo of the software running and a walkthrough of the code. Focus should be on sharing what you learned about the language syntax.}
+Here is a video where I showcase this project running:
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/aLKXu0d11nw)
 
 # Development Environment
 
