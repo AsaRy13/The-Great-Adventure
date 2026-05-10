@@ -73,6 +73,57 @@ public class App {
                         current_room = room_num;
 
                         break;
+                    case 3:
+                        //Room title:
+                        System.out.println("\033[1mDead End\033[0m");
+
+                        //Room description:
+                        if(!room_visited[room_num]){
+                            room_descriptions.Dead_End_W("first");
+                        } else{
+                            room_descriptions.Dead_End_W("subsequent");
+                        }
+
+                        //Attached Rooms:
+                        player_input.direction_set(-1, -1, -1, 2, -1, -1, -1, -1, -1, -1);
+
+                        current_room = room_num;
+
+                        break;
+                    case 4:
+                        //Room title:
+                        System.out.println("\033[1mMaze\033[0m");
+
+                        //Room description:
+                        if(!room_visited[room_num]){
+                            room_descriptions.Maze_N_E("first");
+                        } else{
+                            room_descriptions.Maze_N_E("subsequent");
+                        }
+
+                        //Attached Rooms:
+                        player_input.direction_set(5, -1, 2, -1, -1, -1, -1, -1, -1, -1);
+
+                        current_room = room_num;
+
+                        break;
+                    case 5:
+                        //Room title:
+                        System.out.println("\033[1mMaze Arena\033[0m");
+
+                        //Room description:
+                        if(!room_visited[room_num]){
+                            room_descriptions.Maze_Arena("first");
+                        } else{
+                            room_descriptions.Maze_Arena("subsequent");
+                        }
+
+                        //Attached Rooms:
+                        player_input.direction_set(-1, -1, -1, -1, -1, -1, -1, -1, -1, -1);
+
+                        current_room = room_num;
+
+                        break;
                 }
                 System.out.println();
             }

@@ -57,4 +57,49 @@ public class RoomDescriptions {
             System.out.println("I didn't understand that.");
         }
     }
+
+    public void Dead_End_W(String descriptionType) {
+        if(descriptionType.equalsIgnoreCase("first")){
+            //First time the room is entered
+            System.out.println("\033[3mYou have reached a dead end. The way back to the maze is to the west.\033[0m");
+        } else if(descriptionType.equalsIgnoreCase("subsequent")) {
+            //Subsequent times the room is entered
+            System.out.println("\033[3mYou have reached a dead end. The way back to the maze is to the west.\033[0m");
+        } else if(descriptionType.equalsIgnoreCase("inspect_general")){
+            //When the inspect command is used
+            System.out.println("\033[3mThis is a dead end. The way back is to the west.\033[0m");
+        } else {
+            System.out.println("I didn't understand that.");
+        }
+    }
+
+    public void Maze_N_E(String descriptionType) {
+        if(descriptionType.equalsIgnoreCase("first")){
+            //First time the room is entered
+            System.out.println("\033[3mThis part of the maze has a path to the north and a path to the east.\033[0m");
+        } else if(descriptionType.equalsIgnoreCase("subsequent")) {
+            //Subsequent times the room is entered
+            System.out.println("\033[3mThis part of the maze has a path to the north and a path to the east.\033[0m");
+        } else if(descriptionType.equalsIgnoreCase("inspect_general")){
+            //When the inspect command is used
+            System.out.println("\033[3mYou are in a maze and there is a path to the north and a path to the east.\033[0m");
+        } else {
+            System.out.println("I didn't understand that.");
+        }
+    }
+
+    public void Maze_Arena(String descriptionType) {
+        if(descriptionType.equalsIgnoreCase("first")){
+            //First time the room is entered
+            System.out.println("\033[3mYou enter a big area in the maze with a statue in the middle.\nAll of a sudden all of the exits to this area close and the statue comes to life and starts coming after you!\033[0m");
+        } else if(descriptionType.equalsIgnoreCase("subsequent")) {
+            //Subsequent times the room is entered
+            System.out.println("\033[3m\033[0m");
+        } else if(descriptionType.equalsIgnoreCase("inspect_general")){
+            //When the inspect command is used
+            System.out.println("\033[3m\033[0m");
+        } else {
+            System.out.println("I didn't understand that.");
+        }
+    }
 }

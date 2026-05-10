@@ -190,6 +190,12 @@ public class PlayerInput {
             this.room_descriptions.The_Gates_of_Destiny(inspect_object);
         } else if (roomNum == 2){
             this.room_descriptions.Maze_Enterance(inspect_object);
+        } else if (roomNum == 3){
+            this.room_descriptions.Dead_End_W(inspect_object);
+        } else if (roomNum == 4){
+            this.room_descriptions.Maze_N_E(inspect_object);
+        } else if (roomNum == 5){
+            this.room_descriptions.Maze_Arena(inspect_object);
         }
     }
 }
